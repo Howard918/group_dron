@@ -359,7 +359,7 @@ for i, drone_id in enumerate(DRONE_IDS):
     create_movement_button(pr_frame, "▲\n(Fwd)", 'forward', 0, 1, drone_id)
     create_movement_button(pr_frame, "◄\n(Left)", 'left', 1, 0, drone_id)
     create_movement_button(pr_frame, "►\n(Right)", 'right', 1, 2, drone_id)
-    create_movement_button(pr_frame, "▼\n(Back)", 'backward', 2, 1, drone_id)
+    create_movement_button(pr_frame, "▼\n(Back)", 'backward', 1, 1, drone_id)
 
     yt_frame = ttk.LabelFrame(move_frame, text="Yaw/Throttle")
     yt_frame.pack(side="left", padx=5)
@@ -367,7 +367,7 @@ for i, drone_id in enumerate(DRONE_IDS):
     create_movement_button(yt_frame, "Up", 'up', 0, 1, drone_id)
     create_movement_button(yt_frame, "↰\n(Turn L)", 'turn_left', 1, 0, drone_id)
     create_movement_button(yt_frame, "↱\n(Turn R)", 'turn_right', 1, 2, drone_id)
-    create_movement_button(yt_frame, "Down", 'down', 2, 1, drone_id)
+    create_movement_button(yt_frame, "Down", 'down', 1, 1, drone_id)
     
     cmds_frame.pack_forget()
     enable_movement_controls(drone_id, False)
