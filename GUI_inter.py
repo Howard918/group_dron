@@ -301,7 +301,7 @@ gui_elements = {'D1': {}, 'D2': {}, 'D3': {}}
 
 def create_movement_button(parent, text, direction, row, col, drone_id):
     button = ttk.Button(parent, text=text, width=8)
-    button.grid(row=row, column=col, padx=5, pady=5, ipady=10)
+    button.grid(row=row, column=col, padx=3, pady=3, ipady=3) # Reduced padding
     button.bind('<ButtonPress-1>', lambda event, d=direction, i=drone_id: start_move(i, d))
     button.bind('<ButtonRelease-1>', lambda event, d=direction, i=drone_id: stop_move(i, d))
 
@@ -343,12 +343,12 @@ for i, drone_id in enumerate(DRONE_IDS):
     ind_cmds_group = ttk.Frame(cmds_frame)
     ind_cmds_group.pack(side="left", padx=10, anchor="n")
     
-    takeoff_btn = ttk.Button(ind_cmds_group, text="Take Off", width=12, command=lambda i=drone_id: take_off_land_individual(i))
+    takeoff_btn = ttk.Button(ind_cmds_group, text="Take Off", width=10, command=lambda i=drone_id: take_off_land_individual(i)) # Reduced width
     takeoff_btn.pack(pady=4, fill="x")
     gui_elements[drone_id]['takeoff_btn'] = takeoff_btn
 
-    ttk.Button(ind_cmds_group, text="Calibrate", width=12, command=lambda i=drone_id: calibrate_individual(i)).pack(pady=4, fill="x")
-    ttk.Button(ind_cmds_group, text="Check Battery", width=12, command=lambda i=drone_id: check_battery_individual(i)).pack(pady=4, fill="x")
+    ttk.Button(ind_cmds_group, text="Calibrate", width=10, command=lambda i=drone_id: calibrate_individual(i)).pack(pady=4, fill="x") # Reduced width
+    ttk.Button(ind_cmds_group, text="Check Battery", width=10, command=lambda i=drone_id: check_battery_individual(i)).pack(pady=4, fill="x") # Reduced width
     
     move_frame = ttk.Frame(cmds_frame)
     move_frame.pack(side="left", padx=10)
